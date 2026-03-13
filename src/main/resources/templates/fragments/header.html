@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- HEADER -->
+<div class="sticky-top"
+     style="background:#F3E9CF;box-shadow:0 2px 10px rgba(0,0,0,0.05);">
+    <div class="container">
+        <div class="row align-items-center py-2">
+
+            <!-- LOGO -->
+            <div class="col-6 col-lg-3 text-start text-lg-center">
+            	<a href="/">
+            		<img th:src="@{image/LOGO-1-removebg.webp}"
+                     alt="Buddha King"
+                     class="img-fluid"
+                     style="height:60px;">
+            	</a>
+                
+            </div>
+
+            <!-- MENU DESKTOP -->
+            <div class="col-lg-6 d-none d-lg-flex justify-content-center">
+                <ul class="nav align-items-center">
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold"
+                           href="/"
+                           style="color:#2F2F2F;">
+                            Trang chủ
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold"
+                           href="/about"
+                           style="color:#2F2F2F;">
+                            Giới thiệu
+                        </a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link fw-semibold"
+                           href="/contact"
+                           style="color:#2F2F2F;">
+                            Liên hệ
+                        </a>
+                    </li>
+
+                    <!-- HOTLINE DESKTOP -->
+                    <li class="nav-item mx-3">
+                        <span class="fw-semibold"
+                              style="color:#C6A24A;">
+                            📞 0587 6666 88
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- CTA -->
+            <div class="col-6 col-lg-3 text-end">
+                <!-- MOBILE -->
+                <button class="btn d-lg-none"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#mobileMenu"
+                        style="border:1px solid #E0D3AE;background:#fff;">
+                    ☰
+                </button>
+
+                <!-- DESKTOP CTA -->
+                <a href="/cart"
+                   class="btn d-none d-lg-inline-block px-4"
+                   style="background:#C6A24A;color:#fff;border-radius:22px;">
+                    Đặt hàng ngay
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div class="collapse d-lg-none"
+         id="mobileMenu"
+         style="background:#F3E9CF;border-top:1px solid #E0D3AE;">
+        <div class="container">
+            <ul class="nav flex-column py-3">
+                <li class="nav-item">
+                    <a class="nav-link py-2"
+                       href="/"
+                       style="color:#2F2F2F;">
+                        Trang chủ
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-2"
+                       href="/about"
+                       style="color:#2F2F2F;">
+                        Giới thiệu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link py-2"
+                       href="/contact"
+                       style="color:#2F2F2F;">
+                        Liên hệ
+                    </a>
+                </li>
+
+                <!-- HOTLINE MOBILE -->
+                <li class="nav-item mt-2">
+                    <a href="tel:0587666688"
+                       class="btn w-100"
+                       style="background:#fff;border:1px solid #C6A24A;color:#C6A24A;border-radius:20px;">
+                        📞 Gọi ngay: 0587 6666 88
+                    </a>
+                </li>
+
+                <li class="nav-item mt-2">
+                    <a href="/cart"
+                       class="btn w-100"
+                       style="background:#C6A24A;color:#fff;border-radius:20px;">
+                        Đặt hàng ngay
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+	
+</body>
+</html>

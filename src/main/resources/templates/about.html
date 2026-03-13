@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Giới thiệu | Buddha King</title>
+
+<style>
+body {
+	background: #F7F5F0;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont;
+	color: #2b2b2b;
+}
+
+.section-intro {
+	padding: 80px 0;
+}
+
+.section-intro h1 {
+	color: #B8962E;
+	letter-spacing: 1px;
+}
+
+.image-wrapper {
+	max-width: 920px;
+	margin: 0 auto;
+	border-radius: 24px;
+	overflow: hidden;
+	aspect-ratio: 16/9;
+	box-shadow: 0 30px 80px rgba(0, 0, 0, .12);
+}
+
+.image-wrapper img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* ✅ giữ nguyên toàn bộ ảnh */
+	background: #fff;
+}
+
+.content-wrap {
+	max-width: 860px;
+	margin: 0 auto;
+}
+
+/* ===== FEATURE BLOCK ===== */
+.feature-block {
+	display: flex;
+	gap: 20px;
+	margin-bottom: 36px;
+	align-items: flex-start;
+}
+
+.feature-icon {
+	width: 56px;
+	height: 56px;
+	border-radius: 50%;
+	background: rgba(184, 150, 46, 0.12);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 24px;
+	color: #B8962E;
+	flex-shrink: 0;
+}
+
+/* ===== QUOTE ===== */
+.quote-box {
+	margin: 90px auto;
+	padding: 56px 40px;
+	background: #fff;
+	border-radius: 28px;
+	box-shadow: 0 24px 60px rgba(0, 0, 0, .08);
+	max-width: 900px;
+}
+
+.quote-box p.fs-3 {
+	line-height: 1.45;
+	letter-spacing: .3px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media ( max-width : 768px) {
+	.section-intro {
+		padding: 48px 0;
+	}
+	.image-wrapper {
+		aspect-ratio: 4/3;
+		border-radius: 18px;
+	}
+	.feature-block {
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+		gap: 14px;
+	}
+	.feature-icon {
+		font-size: 50px;
+		margin-bottom: 6px;
+	}
+	.feature-block h5 {
+		font-size: 18px;
+	}
+	.feature-block p {
+		font-size: 16px;
+	}
+	.quote-box {
+		padding: 40px 24px;
+		margin: 70px 16px;
+	}
+}
+</style>
+</head>
+
+<body>
+
+	<section class="section-intro text-center">
+		<div class="container">
+
+			<p class="fs-6 text-muted animate__animated animate__fadeInDown">
+				Tháng 1, 2026</p>
+
+			<h1 class="fw-bold mb-3 animate__animated animate__fadeInDown">
+				GIỚI THIỆU NHANG BUDDHA KING</h1>
+
+			<p class="text-muted mb-5 animate__animated animate__fadeInUp">
+				Hoàng Nguyễn · Nhân viên kỹ thuật IT</p>
+
+			<!-- IMAGE -->
+			<div class="image-wrapper mb-5 animate__animated animate__fadeInUp">
+				<img th:src="@{/image/BigLogo.webp}" alt="Buddha King">
+			</div>
+
+			<!-- CONTENT -->
+			<div class="content-wrap text-start">
+
+				<p class="fs-5 mb-4" data-aos="fade-up">
+					Trên thị trường đầy rẫy những loại hương được tạo mùi bằng hóa chất
+					độc hại và phụ gia tổng hợp, thì <strong>Buddha King</strong> lại
+					chọn một con đường khó hơn: trả hương về đúng bản chất nguyên sơ
+					của thảo mộc.
+				</p>
+
+				<p class="fs-5 mb-5" data-aos="fade-up" data-aos-delay="100">
+					Chúng tôi đã kiến tạo một hành trình tinh lọc bằng công nghệ <strong>Thanh
+						lọc sinh học</strong> độc quyền – nơi khoa học hiện đại gặp gỡ trí tuệ cổ
+					truyền, để mỗi nén hương không chỉ thơm, mà còn <em>sạch – an
+						toàn – an yên</em>.
+				</p>
+
+				<div class="feature-block" data-aos="fade-up">
+					<div
+						class="feature-icon animate__animated animate__fadeIn animate__slow">
+						<i class="bi bi-tree-fill"></i>
+					</div>
+					<div>
+						<h5 class="fw-bold mb-1">Nguyên liệu thượng hạng</h5>
+						<p class="mb-0 fs-5">
+							Tuyển chọn 05 loại gỗ quý hiếm cùng gần 40 loại thảo mộc dược
+							liệu thiên nhiên, phối chế theo bài thuốc gia truyền hơn <strong>200
+								năm</strong>, mỗi mẻ hương đều đạt độ ổn định và thuần khiết cao nhất.
+						</p>
+					</div>
+				</div>
+
+				<div class="feature-block" data-aos="fade-up" data-aos-delay="100">
+					<div
+						class="feature-icon animate__animated animate__fadeIn animate__slow">
+						<i class="bi bi-droplet-half"></i>
+					</div>
+					<div>
+						<h5 class="fw-bold mb-1">Tinh khiết tuyệt đối</h5>
+						<p class="mb-0 fs-5">Vi sinh vật có lợi được đưa vào quá trình
+							xử lý, nhẹ nhàng phân giải hoàn toàn tạp chất và dư lượng vi mô,
+							đưa nguyên liệu về trạng thái sạch chuẩn sinh học – an toàn cho
+							sức khỏe.</p>
+					</div>
+				</div>
+
+				<div class="feature-block" data-aos="fade-up" data-aos-delay="200">
+					<div
+						class="feature-icon animate__animated animate__fadeIn animate__slow">
+						<i class="bi bi-wind"></i>
+					</div>
+					<div>
+						<h5 class="fw-bold mb-1">Hương thơm “chín” tự nhiên</h5>
+						<p class="mb-0 fs-5">Qua quá trình ủ men sinh học, hương trở
+							nên sâu lắng, ấm áp và lan tỏa chậm rãi. Không cay mắt, không gắt
+							mũi – chỉ còn lại cảm giác an yên và tĩnh tại trong không gian.</p>
+					</div>
+				</div>
+
+			</div>
+
+
+			<!-- QUOTE -->
+			<div class="quote-box text-center my-5 py-5" data-aos="zoom-in">
+				<p class="fs-3 fw-bold mb-3">“Chúng tôi không tạo ra mùi hương
+					để gây ấn tượng tức thì, mà nuôi dưỡng một mùi hương đủ tinh khiết
+					để đồng hành lâu dài với sức khỏe và đời sống tinh thần.”</p>
+				<p class="text-muted mb-0">Mr Nam · Phó Giám đốc Kỹ thuật ·
+					Buddha King</p>
+			</div>
+
+			<!-- Last -->
+			<div class="text-center content-wrap" data-aos="fade-up">
+				<p class="fs-5 mb-4 d-none d-md-block">
+					Buddha King không dành cho số đông tìm kiếm mùi hương nồng gắt tức
+					thời. Chúng tôi dành sản phẩm này cho những ai trân trọng <strong>sức
+						khỏe, sự tinh khiết</strong> và những khoảnh khắc tĩnh lặng trong đời sống
+					tâm linh.
+				</p>
+
+				<p class="fs-5 fw-semibold">
+					Nếu bạn đang tìm kiếm một nén hương <em>không chỉ để thắp – mà
+						để an tâm sử dụng mỗi ngày</em>, Buddha King chính là lựa chọn xứng
+					đáng.
+				</p>
+			</div>
+			<div class="px-2">
+				<a href="/cart"
+                       class="btn w-100 d-md-none mt-3"
+                       style="background:#C6A24A;color:#fff;border-radius:20px;">
+                        Đặt hàng ngay
+                    </a>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+	<script>
+		AOS.init({
+			duration : 900,
+			easing : 'ease-out-cubic',
+			once : true
+		});
+	</script>
+
+</body>
+</html>

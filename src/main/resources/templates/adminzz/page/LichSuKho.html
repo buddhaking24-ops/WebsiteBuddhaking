@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div
+		class="fs-4 fw-bold w-100 px-3 py-2 rounded-4 d-flex justify-content-between bg-light mt-3">
+		<span style="color: rgb(231, 181, 89);">Chào mừng quản lý</span><i
+			class="fa-solid fa-arrow-right-from-bracket pt-2 pe-2"
+			style="color: rgb(231, 181, 89);"></i>
+	</div>
+	<br>
+	<div class="w-100 px-3 py-2 mt-3 bg-light rounded-4"
+		style="height: 527px;">
+		<div class="d-flex justify-content-between">
+			<span class="fs-4 fw-bold" style="color: rgb(231, 181, 89);">Lịch
+			sử xuất nhập kho</span>
+		<button type="button" data-bs-toggle="modal"
+				class="btn btn-warning px-4 rounded-3 fw-bold me-2 py-1 mt-2"
+				ng-click="noAction()">
+				Hoàn tác</i>
+			</button>
+		</div>
+		<table class="table table-light rounded-4 mt-2">
+			<thead>
+				<tr>
+					<th scope="col">Ngày thực hiện</th>
+					<th scope="col">Thời gian</th>
+					<th scope="col">Tên vật chất</th>
+					<th scope="col">Số lượng</th>
+					<th scope="col">Hành động</th>
+					<th scope="col">Ghi chú</th>
+				</tr>
+			</thead>
+			<tbody class="table-group-divider">
+				<tr ng-repeat="ls in itemsLs |orderBy:'ngay':true | limitTo:limit:start ">
+					<th scope="row">{{ls.ngay| date:'dd-MM-yyyy' }}</th>
+					<th class="fw-medium">{{ls.ngay | date:'HH:mm'}}</th>
+					<td>{{ls.vatChat.ten_vat_chat}}</td>
+					<td>{{ls.soLuong}} {{ls.vatChat.donVi}}</td>
+					<td>{{ls.hanhDong}}</td>
+					<td>{{ls.ghiChu}}</td>
+				</tr>
+			</tbody>
+		</table>
+		<nav aria-label="Page navigation example">
+			<ul class="pagination justify-content-center">
+				<li class="page-item {{page==1?'disabled':''}}">
+			     	<a class="page-link" ng-click="changePage(page-1)">&laquo;</a>
+			    </li>
+			    <li class="page-item {{page==p+1?'active':''}}" ng-repeat="p in numberOfPage" >
+			    	<a class="page-link" ng-click="changePage(p+1)">{{p+1}}</a>
+			    </li>
+			    <li class="page-item {{page==totalPage?'disabled':''}}" >
+			      	<a class="page-link" ng-click="changePage(page+1)">&raquo;</a>
+			    </li>
+			</ul>
+		</nav>
+	</div>
+</body>
+</html>

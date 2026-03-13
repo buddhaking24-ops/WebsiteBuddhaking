@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vn" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<div class="container-fluid py-4 px-4">
+
+
+   <!-- STATS -->
+    <div class="row g-4 mb-4">
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-accent"></div>
+                <div>
+                    <div class="stat-title">Người dùng</div>
+                    <div class="stat-value">105</div>
+                </div>
+                <img src="/image/thongKeUser.png" class="stat-img">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-accent"></div>
+                <div>
+                    <div class="stat-title">Thành phẩm</div>
+                    <div class="stat-value">232</div>
+                </div>
+                <img src="/image/thongKeSp.png" class="stat-img">
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="stat-card">
+                <div class="stat-accent"></div>
+                <div>
+                    <div class="stat-title">Đơn hàng</div>
+                    <div class="stat-value">57</div>
+                </div>
+                <img src="/image/thongKeDH.png" class="stat-img">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-card">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="fw-bold mb-0" style="color:  rgb(231,181,89);">Số lượng thành phẩm xuất kho theo tháng</h5>
+            <span class="chart-badge">theo tháng</span>
+        </div>
+        <canvas id="bieuDoDoanhThuTheoThang"></canvas>
+    </div>
+
+</div>
+
+
+<style>
+/* ===== HEADER ===== */
+.admin-header{
+    background: white;
+    padding: 20px 25px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.04);
+}
+
+.logout-icon{
+    color: rgb(231,181,89);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* ===== STAT CARD ===== */
+.stat-card{
+    position: relative;
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: 0.2s ease;
+}
+
+.stat-card:hover{
+    transform: translateY(-4px);
+}
+
+/* accent bar */
+.stat-accent{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background: rgb(231,181,89);
+}
+
+/* text */
+.stat-title{
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 6px;
+}
+
+.stat-value{
+    font-size: 32px;
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+/* image */
+.stat-img{
+    height: 55px;
+    opacity: 0.85;
+}
+
+/* ===== CHART CARD ===== */
+.chart-card{
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.chart-badge{
+    background: rgba(231,181,89,0.15);
+    color: rgb(231,181,89);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 13px;
+}
+
+</style>
+
+</body>
+
+
+</html>

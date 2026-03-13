@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="vn">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+:root {
+	--brand: rgb(231, 181, 89);
+	--brand-soft: rgba(231, 181, 89, 0.12);
+}
+
+/* Pagination custom */
+.pagination .page-link {
+	border: none;
+	margin: 0 4px;
+	border-radius: 10px;
+	color: #555;
+	min-width: 38px;
+	text-align: center;
+}
+
+.pagination .page-item.active .page-link {
+	background: rgb(231, 181, 89);
+	color: white;
+	box-shadow: 0 4px 12px rgba(231, 181, 89, 0.4);
+}
+
+.pagination .page-link:hover {
+	background: rgba(231, 181, 89, 0.12);
+}
+
+/* Card chuẩn dashboard */
+.admin-section {
+	background: white;
+	border-radius: 20px;
+	padding: 30px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Header nhỏ phía trên */
+.section-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+}
+
+/* Table nâng cấp */
+.table thead tr {
+	background: var(--brand-soft);
+}
+
+.table td, .table th {
+	vertical-align: middle;
+}
+
+/* Button group gọn */
+.action-btn {
+	width: 34px;
+	height: 34px;
+	padding: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Mobile card nâng cấp */
+@media ( max-width : 767px) {
+	.desktop-table {
+		display: none;
+	}
+	.mobile-card {
+		background: white;
+		border-radius: 18px;
+		padding: 18px;
+		margin-bottom: 18px;
+		box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+		transition: 0.2s ease;
+	}
+	.mobile-card:active {
+		transform: scale(0.98);
+	}
+}
+
+@media ( min-width : 768px) {
+	.mobile-view {
+		display: none;
+	}
+}
+</style>
+
+</head>
+<body>
+
+	<div class="px-4 py-3 rounded-4 bg-white m-4">
+
+		<!-- HEADER -->
+		<div class="d-flex justify-content-between mb-3">
+			<div>
+				<h5 class="fw-bold mb-1" style="color: var(--brand);">Danh sách
+					phản hồi khách hàng</h5>
+				<small class="text-muted"> Quản lý và xử lý phản hồi khách
+					hàng </small>
+			</div>
+			
+			<div>
+				<span class="badge rounded-pill px-3 py-2 d-md-block d-none"
+					style="background: var(--brand);"> {{items.length}} phản hồi
+				</span>
+			</div>
+		</div>
+
+		<!-- TABLE DESKTOP -->
+		<div class="table-responsive desktop-table">
+			<table class="table table-hover align-middle"
+				style="table-layout: fixed; width: 100%; height: 55vh">
+
+				<thead>
+					<tr>
+						<th style="width: 14%">Thời gian</th>
+						<th style="width: 16%">Họ tên</th>
+						<th style="width: 20%">Email</th>
+						<th style="width: 12%">SĐT</th>
+						<th style="width: 26%">Lời nhắn</th>
+						<th style="width: 12%" class="text-center">Hành động</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr ng-repeat="lh in items | orderBy:'ngayGio':true">
+
+						<td>
+							<div class="small text-muted">{{lh.ngayGio |
+								date:'dd-MM-yyyy'}}</div>
+							<div class="fw-semibold">{{lh.ngayGio | date:'HH:mm'}}</div>
+						</td>
+
+						<td>
+							<div class="text-truncate" style="max-width: 160px;">
+								{{lh.hoTen}}</div>
+						</td>
+
+						<td>
+							<div class="text-truncate" style="max-width: 220px;">
+								{{lh.email}}</div>
+						</td>
+
+						<td>{{lh.soDienThoai}}</td>
+
+						<td>
+							<div class="text-truncate" style="max-width: 300px;">
+								{{lh.loiNhan}}</div>
+						</td>
+
+						<td class="text-center text-nowrap">
+
+							<button class="btn action-btn me-2" 
+								style="background: var(--brand); color: white;"
+								data-bs-toggle="modal" data-bs-target="#detailModal"
+								ng-click="loadLhById(lh.id)">
+								<i class="fa-solid fa-eye"></i>
+							</button>
+
+							<button class="btn btn-outline-danger action-btn"
+								ng-click="deleteItem(lh)">
+								<i class="fa-solid fa-trash"></i>
+							</button>
+
+						</td>
+
+					</tr>
+				</tbody>
+
+			</table>
+		</div>
+
+		<!-- MOBILE VIEW -->
+		<div class="mobile-view">
+
+			<div class="mobile-card"
+				ng-repeat="lh in items | orderBy:'ngayGio':true">
+
+				<div class="d-flex justify-content-between mb-2">
+					<div class="fw-semibold">{{lh.hoTen}}</div>
+					<small class="text-muted"> {{lh.ngayGio | date:'dd/MM
+						HH:mm'}} </small>
+				</div>
+
+				<div class="small text-muted mb-1">{{lh.email}}</div>
+
+				<div class="small mb-2">{{lh.soDienThoai}}</div>
+
+				<div class="mb-3 text-muted">{{lh.loiNhan | limitTo:140}}...</div>
+
+				<div class="d-flex justify-content-end">
+					<button class="btn btn-sm me-2"
+						style="background: var(--brand); color: white;"
+						data-bs-toggle="modal" data-bs-target="#detailModal"
+						ng-click="loadLhById(lh.id)">Xem</button>
+
+					<button class="btn btn-sm btn-outline-danger"
+						ng-click="deleteItem(lh)">Xóa</button>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- PAGINATION -->
+	<div class="d-flex justify-content-center mt-4">
+
+		<ul class="pagination mb-0">
+
+			<li class="page-item"><a class="page-link" href="#"><i
+					class="fa fa-angle-left"></i></a></li>
+
+			<li class="page-item active"><a class="page-link" href="#">1</a>
+			</li>
+
+			<li class="page-item"><a class="page-link" href="#">2</a></li>
+
+			<li class="page-item"><a class="page-link" href="#">3</a></li>
+
+			<li class="page-item"><a class="page-link" href="#"><i
+					class="fa fa-angle-right"></i></a></li>
+
+		</ul>
+
+	</div>
+
+	<!-- MODAL CHI TIẾT -->
+	<div class="modal fade" id="detailModal" tabindex="-1">
+		<div class="modal-dialog modal-lg modal-dialog-centered">
+			<div class="modal-content border-0 rounded-4 shadow">
+
+				<!-- Header -->
+				<div class="modal-header border-0"
+					style="background: linear-gradient(135deg, rgb(231, 181, 89), #d4a63f); color: white; border-top-left-radius: 1rem; border-top-right-radius: 1rem;">
+
+					<div>
+						<h5 class="modal-title fw-bold mb-1">Chi tiết phản hồi</h5>
+						<small style="opacity: 0.9;">Gửi lúc: {{lienHe.ngayGio |
+							date:'dd/MM/yyyy HH:mm'}} </small>
+					</div>
+
+					<button type="button" class="btn-close btn-close-white"
+						data-bs-dismiss="modal"></button>
+				</div>
+
+				<!-- Body -->
+				<div class="modal-body px-4 py-4">
+
+					<div class="row g-4">
+
+						<div class="col-md-6">
+							<div class="p-3 bg-light rounded-3 h-100">
+								<div class="small text-muted mb-1">Họ tên</div>
+								<div class="fw-semibold">{{lienHe.hoTen}}</div>
+							</div>
+						</div>
+
+						<div class="col-md-6">
+							<div class="p-3 bg-light rounded-3 h-100">
+								<div class="small text-muted mb-1">Số điện thoại</div>
+								<div class="fw-semibold">{{lienHe.soDienThoai}}</div>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="p-3 bg-light rounded-3">
+								<div class="small text-muted mb-1">Email</div>
+								<div class="fw-semibold">{{lienHe.email}}</div>
+							</div>
+						</div>
+
+						<div class="col-12">
+							<div class="p-3 rounded-3"
+								style="background: rgba(231, 181, 89, 0.08); border-left: 4px solid rgb(231, 181, 89);">
+								<div class="small text-muted mb-2">Lời nhắn</div>
+								<div style="white-space: pre-line;">{{lienHe.loiNhan}}</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<!-- Footer -->
+				<div class="modal-footer border-0 px-4 pb-4">
+
+					<button class="btn btn-outline-secondary" data-bs-dismiss="modal">
+						Đóng</button>
+
+					<button class="btn"
+						style="background: red; color: white;"
+						ng-click="deleteItem(selected)" data-bs-dismiss="modal">
+						<i class="fa-solid fa-trash me-1"></i> Xóa phản hồi
+					</button>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>
