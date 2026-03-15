@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+main {
+  background: #FFFBEF;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+/* CARD CHUNG */
+.contact-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.06);
+}
+
+/* HEADER */
+.contact-header h1 {
+  color: #B8962E;
+  font-weight: 800;
+}
+.contact-header p {
+  font-size: 1.05rem;
+  color: #555;
+}
+
+/* INFO LIST */
+.contact-info p span {
+  color: #8a6d1d;
+  font-weight: 600;
+}
+
+/* BUTTON */
+.btn-brand {
+  background: #DBB743;
+  border: none;
+  color: #000;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 12px 24px;
+}
+.btn-brand:hover {
+  background: #cfae3a;
+}
+
+/* MAP */
+.map-title {
+  font-weight: 700;
+}

@@ -1,152 +1,91 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<main>
+	<div class="container py-5">
+		<!-- HEADER -->
+		<div class="text-center mb-5 contact-header">
+			<h1>LIÊN HỆ BUDDHA KING</h1>
+			<p>Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn</p>
+		</div>
 
-<title>Liên hệ | Buddha King</title>
-<meta name="description"
-  content="Liên hệ Buddha King – Hương nhang thảo mộc tự nhiên, an toàn cho sức khỏe và không gian thờ tự.">
+		<!-- MAIN CARD -->
+		<div class="contact-card p-4 p-lg-5 mb-4">
 
-<style>
-body {
-  background: #F7F5F0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont;
-}
+			<div class="row g-5">
 
-/* CARD CHUNG */
-.contact-card {
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 18px 45px rgba(0,0,0,0.06);
-}
+				<!-- LEFT: INFO -->
+				<div class="col-lg-5">
+					<h4 class="fw-bold mb-3">Thông tin doanh nghiệp</h4>
 
-/* HEADER */
-.contact-header h1 {
-  color: #B8962E;
-  font-weight: 800;
-}
-.contact-header p {
-  font-size: 1.05rem;
-  color: #555;
-}
+					<div class="contact-info">
+						<p>
+							<span>Địa chỉ:</span><br> 69 đường số 2, KP Thống Nhất 1, P.
+							Dĩ An, TP. Hồ Chí Minh
+						</p>
 
-/* INFO LIST */
-.contact-info p span {
-  color: #8a6d1d;
-  font-weight: 600;
-}
+						<p>
+							<span>Email:</span><br> thaomochuongnhang@gmail.com
+						</p>
 
-/* BUTTON */
-.btn-brand {
-  background: #DBB743;
-  border: none;
-  color: #000;
-  font-weight: 700;
-  border-radius: 999px;
-  padding: 12px 24px;
-}
-.btn-brand:hover {
-  background: #cfae3a;
-}
+						<p>
+							<span>Điện thoại:</span><br> 0587 6666 88
+						</p>
+					</div>
 
-/* MAP */
-.map-title {
-  font-weight: 700;
-}
-</style>
-</head>
+					<p class="text-muted mt-4">Buddha King cam kết phản hồi mọi
+						liên hệ trong vòng 24 giờ làm việc.</p>
+				</div>
 
-<body>
+				<!-- RIGHT: FORM -->
+				<div class="col-lg-7">
+					<h4 class="fw-bold mb-3">Gửi lời nhắn cho chúng tôi</h4>
 
-<div class="container my-5">
+					<form ng-submit="sendMail()">
+						<div class="form-floating mb-3">
+							<input ng-model="inform.hoTen" type="text" class="form-control"
+								id="name" placeholder="Họ tên" required="required"> <label
+								for="name">Họ và tên *</label>
+						</div>
 
-  <!-- HEADER -->
-  <div class="text-center mb-5 contact-header">
-    <h1>LIÊN HỆ BUDDHA KING</h1>
-    <p>Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn</p>
-  </div>
+						<div class="form-floating mb-3">
+							<input ng-model="inform.email" type="email" class="form-control"
+								id="email" placeholder="Email" required="required"> <label
+								for="email">Email *</label>
+						</div>
 
-  <!-- MAIN CARD -->
-  <div class="contact-card p-4 p-lg-5 mb-4">
+						<div class="form-floating mb-3">
+							<input ng-model="inform.soDienThoai" type="tel"
+								required="required" class="form-control" id="phone"
+								placeholder="Điện thoại" pattern="^(0|\+84)(3|5|7|8|9)[0-9]{8}$"
+								title="Nhập số điện thoại VN, ví dụ : 0912345678 hoặc +84912345678">
+							<label for="phone">Số điện thoại *</label>
+						</div>
 
-    <div class="row g-5">
+						<div class="form-floating mb-4">
+							<textarea ng-model="inform.loiNhan" class="form-control"
+								id="message" placeholder="Nội dung" style="height: 120px"
+								required="required" minlength="10"></textarea>
+							<label for="message">Lời nhắn (ít nhất 10 ký tự)</label>
+						</div>
 
-      <!-- LEFT: INFO -->
-      <div class="col-lg-5">
-        <h4 class="fw-bold mb-3">Thông tin doanh nghiệp</h4>
+						<button type="submit" class="btn btn-brand col-12 col-md-3">
+							Gửi liên hệ</button>
+					</form>
+				</div>
 
-        <div class="contact-info">
-          <p><span>Địa chỉ:</span><br>
-            69 đường số 2, KP Thống Nhất 1, P. Dĩ An, TP. Hồ Chí Minh
-          </p>
+			</div>
+		</div>
 
-          <p><span>Email:</span><br>
-            thaomochuongnhang@gmail.com
-          </p>
+		<!-- MAP -->
+		<div class="contact-card overflow-hidden">
+			<div class="px-4 py-3 border-bottom">
+				<div class="map-title">Bản đồ & vị trí cửa hàng</div>
+				<small class="text-muted"> Dễ tìm – thuận tiện di chuyển </small>
+			</div>
 
-          <p><span>Điện thoại:</span><br>
-            0587 6666 88
-          </p>
-        </div>
+			<iframe
+				src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6588.866526930177!2d106.74259255082329!3d10.905571673369355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d8383ab3d6a1%3A0xe0b1e67271d68ec8!2zNjkgxJDGsOG7nW5nIFPhu5EgMiwgRMSpIEFuLCBCw6xuaCBExrDGoW5nLCBWaWV0bmFt!5e0!3m2!1svi!2s!4v1768630569564!5m2!1svi!2s"
+				width="100%" height="300" style="border: 0;" loading="lazy">
+			</iframe>
+		</div>
+	</div>
 
-        <p class="text-muted mt-4">
-          Buddha King cam kết phản hồi mọi liên hệ trong vòng 24 giờ làm việc.
-        </p>
-      </div>
-
-      <!-- RIGHT: FORM -->
-      <div class="col-lg-7">
-        <h4 class="fw-bold mb-3">Gửi lời nhắn cho chúng tôi</h4>
-
-        <form ng-submit="sendMail()">
-          <div class="form-floating mb-3">
-            <input ng-model="inform.hoTen" type="text" class="form-control" id="name" placeholder="Họ tên" required="required">
-            <label for="name">Họ và tên *</label>
-          </div>
-
-          <div class="form-floating mb-3">
-            <input ng-model="inform.email" type="email" class="form-control" id="email" placeholder="Email" required="required">
-            <label for="email">Email *</label>
-          </div>
-
-          <div class="form-floating mb-3">
-            <input ng-model="inform.soDienThoai" type="tel" required="required" class="form-control" id="phone" placeholder="Điện thoại" pattern="^(0|\+84)(3|5|7|8|9)[0-9]{8}$"  title="Nhập số điện thoại VN, ví dụ : 0912345678 hoặc +84912345678">
-            <label for="phone">Số điện thoại *</label>
-          </div>
-
-          <div class="form-floating mb-4">
-            <textarea ng-model="inform.loiNhan" class="form-control" id="message"
-              placeholder="Nội dung" style="height:120px" required="required" minlength="10"></textarea>
-            <label for="message">Lời nhắn (ít nhất 10 ký tự)</label>
-          </div>
-
-          <button type="submit" class="btn btn-brand col-12 col-md-3">
-            Gửi liên hệ
-          </button>
-        </form>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- MAP -->
-  <div class="contact-card overflow-hidden">
-    <div class="px-4 py-3 border-bottom">
-      <div class="map-title">Bản đồ & vị trí cửa hàng</div>
-      <small class="text-muted">
-        Dễ tìm – thuận tiện di chuyển
-      </small>
-    </div>
-
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6588.866526930177!2d106.74259255082329!3d10.905571673369355!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3174d8383ab3d6a1%3A0xe0b1e67271d68ec8!2zNjkgxJDGsOG7nW5nIFPhu5EgMiwgRMSpIEFuLCBCw6xuaCBExrDGoW5nLCBWaWV0bmFt!5e0!3m2!1svi!2s!4v1768630569564!5m2!1svi!2s"
-      width="100%" height="300" style="border:0;"
-      loading="lazy">
-    </iframe>
-  </div>
-
-</div>
-
-</body>
-</html>
+</main>

@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+/*Dùng để ẩn phần tử Angular chưa bind xong*/
+[ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+	display: none !important;
+}

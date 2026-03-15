@@ -1,6 +1,6 @@
-let host = "http://localhost:8080/api"
+let host = "/api"
 
-var app = angular.module('myApp', ['ngRoute']);
+var app = angular.module('myApp', []);
 app.controller('myCtrl', function($http, $scope) {
 
     $scope.inform = {}
@@ -61,15 +61,15 @@ app.controller('myCtrl', function($http, $scope) {
         soLuongMua: 1
     };
 
-	// 👇 LẤY QTY TỪ URL
-	const params = new URLSearchParams(window.location.search);
-	const urlQty = parseInt(params.get("qty"));
+    // 👇 LẤY QTY TỪ URL
+    const params = new URLSearchParams(window.location.search);
+    const urlQty = parseInt(params.get("qty"));
 
-	if (!isNaN(urlQty) && urlQty > 0) {
-	    $scope.cartInform.soLuongMua = urlQty;
-	}
-	//
-	
+    if (!isNaN(urlQty) && urlQty > 0) {
+        $scope.cartInform.soLuongMua = urlQty;
+    }
+    //
+
     $scope.updatePrice = function() {
 
         let qty = Math.max(1, $scope.cartInform.soLuongMua || 1);
@@ -138,4 +138,17 @@ AOS.init({
     duration: 1000, // thời gian animation (ms) 
     once: true
     // chỉ chạy 1 lần khi scroll tới 
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (window.location.pathname === "/") {
+        const track = document.querySelector('[style*="animation: reviewScroll"]');
+
+        if (track) {
+            const content = track.innerHTML;
+            track.innerHTML += content;
+        }
+    }
+
 });

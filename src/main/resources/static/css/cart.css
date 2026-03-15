@@ -1,0 +1,114 @@
+@charset "UTF-8";
+
+main {
+	background: #FFFBEF;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont;
+}
+
+.checkout-wrap {
+	max-width: 1200px;
+	margin: auto;
+}
+
+.product-hero {
+	background: #fff;
+	border-radius: 18px;
+	padding: 32px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.06);
+}
+
+.product-img-lg {
+	width: 100%;
+	max-width: 420px;
+	border-radius: 14px;
+	border: 1px solid #eee;
+}
+
+.price-main {
+	font-size: 36px;
+	font-weight: 800;
+	color: #B8962E;
+}
+
+.badge-sale {
+	background: #DBB743;
+	color: #000;
+	font-weight: 600;
+	padding: 6px 14px;
+	border-radius: 999px;
+	font-size: 14px;
+}
+
+.buy-card {
+	background: #fff;
+	border-radius: 18px;
+	padding: 28px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+	position: sticky;
+	top: 24px;
+}
+
+.progress {
+	height: 14px;
+	border-radius: 999px;
+}
+
+.progress-bar {
+	background: #DBB743;
+	font-size: 12px;
+	font-weight: 600;
+	transition: background 0.3s ease, width 0.3s ease;
+}
+
+/* trạng thái giá sỉ */
+.progress-bar.wholesale {
+	background: #2e7d32;
+}
+
+.price-summary {
+	background: #FAF9F6;
+	border-radius: 14px;
+	padding: 14px 16px;
+	border: 1px solid #eee;
+}
+
+.price-main {
+	display: flex;
+	align-items: baseline;
+	gap: 12px;
+	font-size: 36px;
+	font-weight: 800;
+}
+
+.summary-label {
+	font-size: 14px;
+	color: #666;
+}
+
+.summary-saving {
+	font-size: 16px;
+	font-weight: 700;
+	color: #2e7d32; /* xanh lá – tiền lời */
+}
+
+.summary-subtotal {
+	font-size: 15px;
+	color: #333;
+	font-weight: 500;
+}
+
+.summary-total {
+	margin-top: 8px;
+	padding-top: 10px;
+	border-top: 1px dashed #ddd;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 18px;
+}
+
+.summary-total strong {
+	font-size: 26px;
+	font-weight: 800;
+	color: #B8962E; /* vàng brand */
+}

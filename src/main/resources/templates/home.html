@@ -1,60 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<style type="text/css">
-	.hero-img {
-  object-fit: cover;
-}
+<main style="background: #FFFBEF;">
 
-@media (min-width: 768px) {
-  .hero-img {
-    height: auto;
-    object-fit: contain; /* hoặc bỏ luôn */
-    object-position: center;
-  }
-  
-@media (max-width: 768px){
-	.hero-img {
-    height: 58vh;
-    object-fit: contain; /* hoặc bỏ luôn */
-    object-position: center;
-  }
-}
-  
+	<div class="position-relative hero-wrapper"
+		style="height: auto; overflow: hidden;">
 
-.hero-skeleton {
-  z-index: 2;
-}
+		<!-- Skeleton -->
+		<div
+			class="hero-skeleton placeholder-wave position-absolute top-0 start-0 w-100 h-100">
+			<div class="placeholder w-100 h-100"></div>
+		</div>
 
-}
-</style>
-</head>
-<body>
+		<!-- Picture -->
+		<picture>
+		<source media="(min-width: 768px)"
+			th:srcset="@{/image/HeroBanner.webp}">
+		<img th:src="@{/image/Mobile_banner(2).webp}" fetchpriority="high"
+			loading="eager" decoding="async" class="w-100 hero-img"
+			onload="this.closest('.hero-wrapper').querySelector('.hero-skeleton').style.display='none'"
+			alt="Hương thảo mộc cao cấp Buddha King"> </picture>
 
-	<div class="position-relative hero-wrapper" style="height:auto; overflow:hidden;">
-
-  <!-- Skeleton -->
-  <div class="hero-skeleton placeholder-wave position-absolute top-0 start-0 w-100 h-100">
-    <div class="placeholder w-100 h-100"></div>
-  </div>
-
-  <!-- Picture -->
-  <picture>
-    <source media="(min-width: 768px)"
-            th:srcset="@{/image/HeroBanner.webp}">
-    <img
-        th:src="@{/image/Mobile_banner(2).webp}"
-        fetchpriority="high"
-        loading="eager"
-        decoding="async"
-        class="w-100 hero-img"
-        onload="this.closest('.hero-wrapper').querySelector('.hero-skeleton').style.display='none'"
-        alt="Hương thảo mộc cao cấp Buddha King">
-  </picture>
-
-</div>
+	</div>
 
 
 	<div class="container-fluid px-md-5">
@@ -87,95 +51,95 @@
 						An – Thịnh Vượng – Phú Quý – Công Danh</strong> trở về trong từng khoảnh
 					khắc.
 				</p>
-				
+
 				<div class="row g-4 mb-4">
 
-  <div class="col-6 col-md-4 col-lg-2">
-    <div class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
-         style="height:25vh;">
-      <img th:src="@{image/NguyenLieu(1).webp}"
-           class="w-100 h-100 img-fluid"
-           style="object-fit:cover;"
-           alt="Nguyên liệu nhang buddhaking - cây Tùng Kim">
-      <div class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
-           style="background:linear-gradient(to top, rgba(0,0,0,0.75), transparent); padding:6px 8px;">
-        Cây Tùng Kim
-      </div>
-    </div>
-  </div>
+					<div class="col-6 col-md-4 col-lg-2">
+						<div
+							class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
+							style="height: 25vh;">
+							<img th:src="@{image/NguyenLieu(1).webp}"
+								class="w-100 h-100 img-fluid" style="object-fit: cover;"
+								alt="Nguyên liệu nhang buddhaking - cây Tùng Kim">
+							<div
+								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
+								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
+								Cây Tùng Kim</div>
+						</div>
+					</div>
 
-  <div class="col-6 col-md-4 col-lg-2">
-    <div class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
-         style="height:25vh;">
-      <img th:src="@{image/NguyenLieu(2).webp}"
-           class="w-100 h-100 img-fluid"
-           style="object-fit:cover;"
-           alt="Nguyên liệu nhang buddhaking - Trầm Hương">
-      <div class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
-           style="background:linear-gradient(to top, rgba(0,0,0,0.75), transparent); padding:6px 8px;">
-        Trầm Hương
-      </div>
-    </div>
-  </div>
+					<div class="col-6 col-md-4 col-lg-2">
+						<div
+							class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
+							style="height: 25vh;">
+							<img th:src="@{image/NguyenLieu(2).webp}"
+								class="w-100 h-100 img-fluid" style="object-fit: cover;"
+								alt="Nguyên liệu nhang buddhaking - Trầm Hương">
+							<div
+								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
+								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
+								Trầm Hương</div>
+						</div>
+					</div>
 
-  <div class="col-6 col-md-4 col-lg-2">
-    <div class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
-         style="height:25vh;">
-      <img th:src="@{image/NguyenLieu(3).webp}"
-           class="w-100 h-100 img-fluid"
-           style="object-fit:cover;"
-           alt="Nguyên liệu nhang buddhaking - Cây Đàn Hương">
-      <div class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
-           style="background:linear-gradient(to top, rgba(0,0,0,0.75), transparent); padding:6px 8px;">
-        Cây Đàn Hương
-      </div>
-    </div>
-  </div>
+					<div class="col-6 col-md-4 col-lg-2">
+						<div
+							class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
+							style="height: 25vh;">
+							<img th:src="@{image/NguyenLieu(3).webp}"
+								class="w-100 h-100 img-fluid" style="object-fit: cover;"
+								alt="Nguyên liệu nhang buddhaking - Cây Đàn Hương">
+							<div
+								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
+								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
+								Cây Đàn Hương</div>
+						</div>
+					</div>
 
-  <div class="col-6 col-md-4 col-lg-2">
-    <div class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
-         style="height:25vh;">
-      <img th:src="@{image/NguyenLieu(4).webp}"
-           class="w-100 h-100 img-fluid"
-           style="object-fit:cover;"
-           alt="Nguyên liệu nhang buddhaking - Đinh Hương">
-      <div class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
-           style="background:linear-gradient(to top, rgba(0,0,0,0.75), transparent); padding:6px 8px;">
-        Đinh Hương
-      </div>
-    </div>
-  </div>
+					<div class="col-6 col-md-4 col-lg-2">
+						<div
+							class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
+							style="height: 25vh;">
+							<img th:src="@{image/NguyenLieu(4).webp}"
+								class="w-100 h-100 img-fluid" style="object-fit: cover;"
+								alt="Nguyên liệu nhang buddhaking - Đinh Hương">
+							<div
+								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
+								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
+								Đinh Hương</div>
+						</div>
+					</div>
 
-  <div class="col-6 col-md-4 col-lg-2">
-    <div class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
-         style="height:25vh;">
-      <img th:src="@{image/NguyenLieu(5).webp}"
-           class="w-100 h-100 img-fluid"
-           style="object-fit:cover;"
-           alt="Nguyên liệu nhang buddhaking - Cây Hương Đá">
-      <div class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
-           style="background:linear-gradient(to top, rgba(0,0,0,0.75), transparent); padding:6px 8px;">
-        Cây Hương Đá
-      </div>
-    </div>
-  </div>
+					<div class="col-6 col-md-4 col-lg-2">
+						<div
+							class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
+							style="height: 25vh;">
+							<img th:src="@{image/NguyenLieu(5).webp}"
+								class="w-100 h-100 img-fluid" style="object-fit: cover;"
+								alt="Nguyên liệu nhang buddhaking - Cây Hương Đá">
+							<div
+								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
+								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
+								Cây Hương Đá</div>
+						</div>
+					</div>
 
-  <div class="col-6 col-md-4 col-lg-2">
-    <div class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
-         style="height:25vh;">
-      <img th:src="@{image/NguyenLieu(6).webp}"
-           class="w-100 h-100 img-fluid"
-           style="object-fit:cover;"
-           alt="Nguyên liệu nhang buddhaking - Thuốc Bắc">
-      <div class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
-           style="background:linear-gradient(to top, rgba(0,0,0,0.75), transparent); padding:6px 8px;">
-        Thuốc Bắc
-      </div>
-    </div>
-  </div>
+					<div class="col-6 col-md-4 col-lg-2">
+						<div
+							class="position-relative overflow-hidden w-100 border border-warning border-4 rounded-4 shadow-sm"
+							style="height: 25vh;">
+							<img th:src="@{image/NguyenLieu(6).webp}"
+								class="w-100 h-100 img-fluid" style="object-fit: cover;"
+								alt="Nguyên liệu nhang buddhaking - Thuốc Bắc">
+							<div
+								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
+								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
+								Thuốc Bắc</div>
+						</div>
+					</div>
 
-</div>
-				
+				</div>
+
 
 				<p class="d-none d-md-block"
 					style="font-size: 18px; line-height: 2; color: #333; margin-bottom: 20px;">
@@ -187,7 +151,8 @@
 					giá trị tinh hoa.
 				</p>
 
-				<p class="d-none d-md-block" style="font-size: 18px; line-height: 2; color: #333;">
+				<p class="d-none d-md-block"
+					style="font-size: 18px; line-height: 2; color: #333;">
 					<strong>🔥 Khói hương Buddha King</strong> lan tỏa, mang lại sự an
 					yên và thịnh vượng cho không gian thờ tự của mỗi gia đình.
 				</p>
@@ -195,7 +160,7 @@
 				<!-- CTA -->
 				<div class="mt-4">
 					<a href="/about" class="btn px-5 py-3 col-12 col-md-3"
-						style="background: #D6B25E; color: #fff; border-radius: 999px; font-size: 16px;">
+						style="background: #D6B25E; color: #fff; border-radius: 999px; font-size: 18px;">
 						Tìm hiểu chi tiết </a>
 				</div>
 
@@ -203,364 +168,226 @@
 		</div>
 
 		<div class="container mt-5 py-5" data-aos="fade-up">
-	<div class="row align-items-center gy-4">
+			<div class="row align-items-center gy-4">
 
-		<!-- Text (mobile ưu tiên đọc trước) -->
-		<div class="col-md-6 order-2 order-md-1">
-			<div class="pe-md-4">
-				<div class="fw-semibold text-uppercase mb-2"
-					style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
-					Công nghệ độc quyền
+				<!-- Text (mobile ưu tiên đọc trước) -->
+				<div class="col-md-6 order-2 order-md-1">
+					<div class="pe-md-4">
+						<div class="fw-semibold text-uppercase mb-2"
+							style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
+							Công nghệ độc quyền</div>
+
+						<h3 class="fw-bold mb-3" style="color: #DBB743; line-height: 1.3;">
+							ĐỘT PHÁ CÔNG NGHỆ SINH HỌC</h3>
+
+						<p style="font-size: 18px; color: #2b2b2b; line-height: 1.7;">
+							Khác với các loại hương thông thường, Buddha King áp dụng quy
+							trình <strong>“Thanh lọc sinh học” (Bioremediation)</strong> độc
+							quyền, giúp loại bỏ tạp chất, giữ trọn tinh dầu gỗ quý và thảo
+							mộc tự nhiên, tạo nên làn khói thuần khiết – dịu nhẹ – an toàn
+							cho sức khỏe.
+						</p>
+
+						<a href="/CNSH" class="d-inline-block mt-md-3 col-12 col-md-4">
+							<button class="btn btn-dark px-4 py-2 rounded-2 w-100">
+								Tìm hiểu thêm</button>
+						</a>
+					</div>
 				</div>
 
-				<h3 class="fw-bold mb-3"
-					style="color: #DBB743; line-height: 1.3;">
-					ĐỘT PHÁ CÔNG NGHỆ SINH HỌC
-				</h3>
+				<!-- Image -->
+				<div class="col-md-6 order-1 order-md-2 text-center">
+					<img alt="Công nghệ sinh học độc quyền nhang Buddha King"
+						class="img-fluid rounded-4 shadow-sm" th:src="@{/image/CNSH.webp}">
+				</div>
 
-				<p style="font-size: 18px;color: #2b2b2b; line-height: 1.7;">
-					Khác với các loại hương thông thường, Buddha King áp dụng quy trình
-					<strong>“Thanh lọc sinh học” (Bioremediation)</strong> độc quyền,
-					giúp loại bỏ tạp chất, giữ trọn tinh dầu gỗ quý và thảo mộc tự nhiên,
-					tạo nên làn khói thuần khiết – dịu nhẹ – an toàn cho sức khỏe.
-				</p>
-
-				<a href="/CNSH" class="d-inline-block mt-md-3 col-12 col-md-4">
-					<button
-						class="btn btn-dark px-4 py-2 rounded-2 w-100">
-						Tìm hiểu thêm
-					</button>
-				</a>
 			</div>
 		</div>
 
-		<!-- Image -->
-		<div class="col-md-6 order-1 order-md-2 text-center">
-			<img
-				alt="Công nghệ sinh học độc quyền nhang Buddha King"
-				class="img-fluid rounded-4 shadow-sm"
-				th:src="@{/image/CNSH.webp}">
-		</div>
-
-	</div>
-</div>
-		
 
 		<div class="mt-5 px-4 pt-4 pb-5" data-aos="fade-up">
-			<h2 style="color: #DBB743;" class="fw-bold" >CAM KẾT "3
-				KHÔNG" CHO SỨC KHỎE</h2>
+			<h2 style="color: #DBB743;" class="fw-bold">CAM KẾT "3 KHÔNG"
+				CHO SỨC KHỎE</h2>
 			<div class="fw-semibold text-uppercase mt-2 mb-3"
-					style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
-					ĐÃ ĐƯỢC KIỂM CHỨNG
-			</div>
+				style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
+				ĐÃ ĐƯỢC KIỂM CHỨNG</div>
 			<div class="row mt-4">
 
-    <!-- Card 1 -->
-    <div class="col-12 col-md-4 mb-4">
-        <div class="card commitment-card text-center h-100 border-0">
-            <div class="icon-wrapper">
-                <i class="bi bi-shield-check"></i>
-            </div>
-            <div class="card-body px-4">
-                <h5 class="card-title commitment-title mt-3">
-    <span class="commitment-top">KHÔNG</span>
-    HÓA CHẤT ĐỘC HẠI
-</h5>
-                <p class="card-text text-muted small mt-3">
-                    Loại bỏ hoàn toàn Axit Phosphoric,
-                    không tạo khí độc P2O5 khi đốt
-                </p>
-            </div>
-        </div>
-    </div>
+				<!-- Card 1 -->
+				<div class="col-12 col-md-4 mb-4">
+					<div class="card commitment-card text-center h-100 border-0">
+						<div class="icon-wrapper">
+							<i class="bi bi-shield-check"></i>
+						</div>
+						<div class="card-body px-4">
+							<h5 class="card-title commitment-title mt-3">
+								<span class="commitment-top">KHÔNG</span> HÓA CHẤT ĐỘC HẠI
+							</h5>
+							<p class="card-text text-muted small mt-3">Loại bỏ hoàn toàn
+								Axit Phosphoric, không tạo khí độc P2O5 khi đốt</p>
+						</div>
+					</div>
+				</div>
 
-    <!-- Card 2 -->
-    <div class="col-12 col-md-4 mb-4">
-        <div class="card commitment-card text-center h-100 border-0">
-            <div class="icon-wrapper">
-                <i class="bi bi-flower1"></i>
-            </div>
-            <div class="card-body px-4">
-                <h5 class="card-title commitment-title mt-3">
-    <span class="commitment-top">KHÔNG</span>
-    CUỐN TÀN HÓA CHẤT
-</h5>
-                <p class="card-text text-muted small mt-3">
-                    Tàn hương rơi tự nhiên sạch sẽ,
-                    giữ trọn vẹn sự tôn nghiêm
-                </p>
-            </div>
-        </div>
-    </div>
+				<!-- Card 2 -->
+				<div class="col-12 col-md-4 mb-4">
+					<div class="card commitment-card text-center h-100 border-0">
+						<div class="icon-wrapper">
+							<i class="bi bi-flower1"></i>
+						</div>
+						<div class="card-body px-4">
+							<h5 class="card-title commitment-title mt-3">
+								<span class="commitment-top">KHÔNG</span> CUỐN TÀN HÓA CHẤT
+							</h5>
+							<p class="card-text text-muted small mt-3">Tàn hương rơi tự
+								nhiên sạch sẽ, giữ trọn vẹn sự tôn nghiêm</p>
+						</div>
+					</div>
+				</div>
 
-    <!-- Card 3 -->
-    <div class="col-12 col-md-4 mb-4">
-        <div class="card commitment-card text-center h-100 border-0">
-            <div class="icon-wrapper">
-                <i class="bi bi-heart-fill"></i>
-            </div>
-            <div class="card-body px-4">
-                <h5 class="card-title commitment-title mt-3">
-    <span class="commitment-top">KHÔNG</span>
-    GÂY KÍCH ỨNG
-</h5>
+				<!-- Card 3 -->
+				<div class="col-12 col-md-4 mb-4">
+					<div class="card commitment-card text-center h-100 border-0">
+						<div class="icon-wrapper">
+							<i class="bi bi-heart-fill"></i>
+						</div>
+						<div class="card-body px-4">
+							<h5 class="card-title commitment-title mt-3">
+								<span class="commitment-top">KHÔNG</span> GÂY KÍCH ỨNG
+							</h5>
 
-                <p class="card-text text-muted small mt-3">
-                    Khói nhẹ, an toàn cho người già, trẻ nhỏ
-                    và phụ nữ mang thai
-                </p>
-            </div>
-        </div>
-    </div>
+							<p class="card-text text-muted small mt-3">Khói nhẹ, an toàn
+								cho người già, trẻ nhỏ và phụ nữ mang thai</p>
+						</div>
+					</div>
+				</div>
 
-</div>
+			</div>
 		</div>
 
 		<div class="container-fluid mb-5 px-0 py-4" data-aos="fade-up"
-	style="overflow: hidden;">
+			style="overflow: hidden;">
 
-	<!-- Header -->
-	<div class="container px-2 mb-4">
-		<h2 class="fw-bold mb-1" style="color: #DBB743;">
-			ĐÁNH GIÁ CỦA KHÁCH HÀNG
-		</h2>
-		<div class="fw-semibold text-uppercase"
-			style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
-			Trải nghiệm thực tế
-		</div>
-	</div>
-
-	<!-- Sushi belt -->
-	<div style="overflow: hidden;">
-		<div
-			style="
-			display: flex;
-			gap: 24px;
-			width: max-content;
-			animation: reviewScroll 40s linear infinite;
-			padding-left: 24px;
-			"
-			onmouseover="this.style.animationPlayState='paused'"
-			onmouseout="this.style.animationPlayState='running'">
-
-			<!-- BOX 1 -->
-			<div style="
-				width: 250px;
-				min-height: 320px;
-				background: #fff;
-				padding: 20px;
-				border-radius: 16px;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-			">
-				<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
-					“Hương rất nhẹ, thơm thanh, không cay mắt.
-					Đốt lâu mà không bị nồng. Không gian thờ
-					tự trong nhà cảm giác an yên hơn hẳn.”
-				</p>
-				<div style="display: flex; align-items: center; gap: 12px;">
-					<svg width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" r="24" fill="#f8f4ea"/>
-<path d="M16 22c0-6 4-10 8-10s8 4 8 10v3H16v-3z" fill="#e7b559"/>
-<circle cx="24" cy="22" r="6" fill="#e7b559"/>
-<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6"/>
-</svg>
-
-					
-					<div>
-						<div class="fw-semibold">Chị Lan</div>
-						<div style="font-size: 0.8rem; color: #777;">TP.HCM</div>
-					</div>
-				</div>
+			<!-- Header -->
+			<div class="container px-2 mb-4">
+				<h2 class="fw-bold mb-1" style="color: #DBB743;">ĐÁNH GIÁ CỦA
+					KHÁCH HÀNG</h2>
+				<div class="fw-semibold text-uppercase"
+					style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
+					Trải nghiệm thực tế</div>
 			</div>
 
-			<!-- BOX 2 -->
-			<div style="
-				width: 250px;
-				min-height: 320px;
-				background: #fff;
-				padding: 20px;
-				border-radius: 16px;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-			">
-				<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
-					“Hương dịu, khói mỏng, không có mùi hóa chất.
-					Gia đình tôi đã dùng liên tục nhiều tháng
-					và rất hài lòng.”
-				</p>
-				<div style="display: flex; align-items: center; gap: 12px;">
-					<svg width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" r="24" fill="#f8f4ea"/>
-<circle cx="24" cy="20" r="7" fill="#e7b559"/>
-<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6"/>
-</svg>
-					
-					<div>
-						<div class="fw-semibold">Anh Minh</div>
-						<div style="font-size: 0.8rem; color: #777;">Bình Dương</div>
-					</div>
-				</div>
-			</div>
+			<!-- Sushi belt -->
+			<div style="overflow: hidden;">
+				<div
+					style="display: flex; gap: 24px; width: max-content; animation: reviewScroll 40s linear infinite; padding-left: 24px;"
+					onmouseover="this.style.animationPlayState='paused'"
+					onmouseout="this.style.animationPlayState='running'">
 
-			<!-- BOX 3 -->
-			<div style="
-				width: 250px;
-				min-height: 320px;
-				background: #fff;
-				padding: 20px;
-				border-radius: 16px;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-			">
-				<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
-					“Nhà có trẻ nhỏ nên tôi rất kỹ khi chọn nhang.
-					Buddha King đốt lên rất dễ chịu, không gây
-					khó thở.”
-				</p>
-				<div style="display: flex; align-items: center; gap: 12px;">
-					<svg width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" r="24" fill="#f8f4ea"/>
-<path d="M16 22c0-6 4-10 8-10s8 4 8 10v3H16v-3z" fill="#e7b559"/>
-<circle cx="24" cy="22" r="6" fill="#e7b559"/>
-<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6"/>
-</svg>
-					<div>
-						<div class="fw-semibold">Cô Hồng</div>
-						<div style="font-size: 0.8rem; color: #777;">Cần Thơ</div>
+					<!-- BOX 1 -->
+					<div
+						style="width: 250px; min-height: 320px; background: #fff; padding: 20px; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);">
+						<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
+							“Hương rất nhẹ, thơm thanh, không cay mắt. Đốt lâu mà không bị
+							nồng. Không gian thờ tự trong nhà cảm giác an yên hơn hẳn.”</p>
+						<div style="display: flex; align-items: center; gap: 12px;">
+							<svg width="36" height="36" viewBox="0 0 48 48"
+								xmlns="http://www.w3.org/2000/svg">
+								<circle cx="24" cy="24" r="24" fill="#f8f4ea" />
+								<path d="M16 22c0-6 4-10 8-10s8 4 8 10v3H16v-3z" fill="#e7b559" />
+								<circle cx="24" cy="22" r="6" fill="#e7b559" />
+								<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6" />
+							</svg>
+							<div>
+								<div class="fw-semibold">Chị Lan</div>
+								<div style="font-size: 0.8rem; color: #777;">TP.HCM</div>
+							</div>
+						</div>
 					</div>
-				</div>
-			</div>
 
-			<!-- BOX 4 -->
-			<div style="
-				width: 250px;
-				min-height: 320px;
-				background: #fff;
-				padding: 20px;
-				border-radius: 16px;
-				display: flex;
-				flex-direction: column;
-				justify-content: space-between;
-				box-shadow: 0 8px 24px rgba(0,0,0,0.06);
-			">
-				<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
-					“Hương thơm thuần, không gắt.
-					Rất phù hợp để thờ Phật và
-					gia tiên mỗi ngày.”
-				</p>
-				<div style="display: flex; align-items: center; gap: 12px;">
-					<svg width="36" height="36" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<circle cx="24" cy="24" r="24" fill="#f8f4ea"/>
-<path d="M17 18c2-4 5-6 7-6s5 2 7 6" stroke="#e7b559" stroke-width="3" fill="none"/>
-<circle cx="24" cy="22" r="6" fill="#e7b559"/>
-<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6"/>
-</svg>
-					
-					<div>
-						<div class="fw-semibold">Chú Ba</div>
-						<div style="font-size: 0.8rem; color: #777;">Long An</div>
+					<!-- BOX 2 -->
+					<div
+						style="width: 250px; min-height: 320px; background: #fff; padding: 20px; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);">
+						<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
+							“Hương dịu, khói mỏng, không có mùi hóa chất. Gia đình tôi đã
+							dùng liên tục nhiều tháng và rất hài lòng.”</p>
+						<div style="display: flex; align-items: center; gap: 12px;">
+							<svg width="36" height="36" viewBox="0 0 48 48"
+								xmlns="http://www.w3.org/2000/svg">
+								<circle cx="24" cy="24" r="24" fill="#f8f4ea" />
+								<circle cx="24" cy="20" r="7" fill="#e7b559" />
+								<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6" />
+							</svg>
+
+							<div>
+								<div class="fw-semibold">Anh Minh</div>
+								<div style="font-size: 0.8rem; color: #777;">Bình Dương</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- BOX 3 -->
+					<div
+						style="width: 250px; min-height: 320px; background: #fff; padding: 20px; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);">
+						<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
+							“Nhà có trẻ nhỏ nên tôi rất kỹ khi chọn nhang. Buddha King đốt
+							lên rất dễ chịu, không gây khó thở.”</p>
+						<div style="display: flex; align-items: center; gap: 12px;">
+							<svg width="36" height="36" viewBox="0 0 48 48"
+								xmlns="http://www.w3.org/2000/svg">
+								<circle cx="24" cy="24" r="24" fill="#f8f4ea" />
+								<path d="M16 22c0-6 4-10 8-10s8 4 8 10v3H16v-3z" fill="#e7b559" />
+								<circle cx="24" cy="22" r="6" fill="#e7b559" />
+								<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6" />
+							</svg>
+							<div>
+								<div class="fw-semibold">Cô Hồng</div>
+								<div style="font-size: 0.8rem; color: #777;">Cần Thơ</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- BOX 4 -->
+					<div
+						style="width: 250px; min-height: 320px; background: #fff; padding: 20px; border-radius: 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);">
+						<p style="font-size: 1rem; line-height: 1.7; color: #2b2b2b;">
+							“Hương thơm thuần, không gắt. Rất phù hợp để thờ Phật và gia tiên
+							mỗi ngày.”</p>
+						<div style="display: flex; align-items: center; gap: 12px;">
+							<svg width="36" height="36" viewBox="0 0 48 48"
+								xmlns="http://www.w3.org/2000/svg">
+								<circle cx="24" cy="24" r="24" fill="#f8f4ea" />
+								<path d="M17 18c2-4 5-6 7-6s5 2 7 6" stroke="#e7b559" stroke-width="3"
+																	fill="none" />
+								<circle cx="24" cy="22" r="6" fill="#e7b559" />
+								<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6" />
+							</svg>
+
+							<div>
+								<div class="fw-semibold">Chú Ba</div>
+								<div style="font-size: 0.8rem; color: #777;">Long An</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</div>
 
-<style>
-@keyframes reviewScroll {
-	0% { transform: translateX(0); }
-	100% { transform: translateX(-50%); }
-}
-
-/*card style*/
-.commitment-card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 30px 20px;
-    transition: all 0.35s ease;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-}
-
-.commitment-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-}
-
-.icon-wrapper {
-    width: 90px;
-    height: 90px;
-    margin: 0 auto;
-    border-radius: 50%;
-    background: rgba(219, 183, 67, 0.08);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-}
-
-.icon-wrapper i {
-    font-size: 40px;
-    color: #DBB743;
-    transition: all 0.3s ease;
-}
-
-.commitment-card:hover .icon-wrapper {
-    background: #DBB743;
-}
-
-.commitment-card:hover .icon-wrapper i {
-    color: #fff;
-}
-
-.commitment-title {
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 1.5;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    min-height: 68px;
-    color: #222; /* tăng tương phản */
-}
-
-.commitment-top {
-    display: block;
-    font-size: 15px; /* tăng lên cho dễ đọc */
-    letter-spacing: 2px; /* giảm spacing */
-    color: #9a7b2f; /* vàng đậm hơn cho tương phản */
-    font-weight: 600;
-    margin-bottom: 6px;
-}
-
-.card-text {
-    font-size: 16px;
-    line-height: 1.7;
-    color: #666;
-    margin-top: 14px;
-}
-</style>
-		
 
 		<div class="mt-3 mb-5 px-4 py-5 pt-4" data-aos="fade-up">
 			<h2 class="fw-bold" style="color: rgb(219, 183, 67)">CHÍNH SÁCH
 				BÁN HÀNG</h2>
-				<div class="fw-semibold text-uppercase mt-2 mb-3"
-					style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
-					LINH HOẠT CHO MỌI NHU CẦU
-			</div>
+			<div class="fw-semibold text-uppercase mt-2 mb-3"
+				style="letter-spacing: 1.5px; font-size: 0.9rem; color: #6b6b6b;">
+				LINH HOẠT CHO MỌI NHU CẦU</div>
 			<div class="card shadow-lg border-primary mb-4 mt-3 w-100">
 				<div class="row g-0 flex-column flex-md-row">
 					<!-- Hình ảnh sản phẩm -->
 					<div class="col-12 col-md-4">
-						<img th:src="@{/image/OneProductBuddha.webp}" style="height: 290px"
-							class="img-fluid rounded-start w-100 object-fit-cover"
-							alt="Hương Buddha King" loading="lazy">
+						<img th:src="@{/image/OneProductBuddha.webp}"
+							style="height: 290px; object-fit: cover; object-position: 50% 20%;"
+							class="img-fluid rounded-start w-100" alt="Hương Buddha King"
+							loading="lazy">
 					</div>
 					<!-- Nội dung sản phẩm -->
 					<div class="col-12 col-md-8">
@@ -584,10 +411,10 @@
 							<!-- Nút CTA -->
 							<a href="/cart">
 								<button
-								class="btn btn-primary btn-lg px-4 fw-bold w-100 w-md-auto">
-								🛒 Đặt hàng ngay</button>
+									class="btn btn-primary btn-lg px-4 fw-bold w-100 w-md-auto">
+									🛒 Đặt hàng ngay</button>
 							</a>
-							
+
 						</div>
 					</div>
 				</div>
@@ -623,10 +450,10 @@
 							<!-- Nút CTA -->
 							<a href="/cart?qty=100">
 								<button
-								class="btn btn-success btn-lg px-4 fw-bold w-100 w-md-auto">
-								🛒 Đặt hàng số lượng lớn</button>
+									class="btn btn-success btn-lg px-4 fw-bold w-100 w-md-auto">
+									🛒 Đặt hàng số lượng lớn</button>
 							</a>
-							
+
 						</div>
 					</div>
 				</div>
@@ -634,12 +461,4 @@
 		</div>
 	</div>
 
-<script>
-	document.addEventListener("DOMContentLoaded", function () {
-		const track = document.querySelector('[style*="animation: reviewScroll"]');
-		const content = track.innerHTML;
-		track.innerHTML += content; // clone toàn bộ box
-	});
-</script>
-</body>
-</html>
+</main>

@@ -1,0 +1,99 @@
+@charset "UTF-8";
+
+main {
+	background: #FFFBEF;
+}
+
+.hero-img {
+	object-fit: cover;
+}
+
+@media ( min-width : 768px) {
+	.hero-img {
+		height: auto;
+		object-fit: contain; /* hoặc bỏ luôn */
+		object-position: center;
+	}
+	@media ( max-width : 768px) {
+		.hero-img {
+			height: 58vh;
+			object-fit: contain; /* hoặc bỏ luôn */
+			object-position: center;
+		}
+	}
+	.hero-skeleton {
+		z-index: 2;
+	}
+}
+
+/*Đánh giá khách*/
+@keyframes reviewScroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(-50%); }
+}
+
+/*card style*/
+.commitment-card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 30px 20px;
+    transition: all 0.35s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+}
+
+.commitment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.icon-wrapper {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: rgba(219, 183, 67, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.icon-wrapper i {
+    font-size: 40px;
+    color: #DBB743;
+    transition: all 0.3s ease;
+}
+
+.commitment-card:hover .icon-wrapper {
+    background: #DBB743;
+}
+
+.commitment-card:hover .icon-wrapper i {
+    color: #fff;
+}
+
+.commitment-title {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    min-height: 68px;
+    color: #222; /* tăng tương phản */
+}
+
+.commitment-top {
+    display: block;
+    font-size: 15px; /* tăng lên cho dễ đọc */
+    letter-spacing: 2px; /* giảm spacing */
+    color: #9a7b2f; /* vàng đậm hơn cho tương phản */
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.card-text {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #666;
+    margin-top: 14px;
+}
