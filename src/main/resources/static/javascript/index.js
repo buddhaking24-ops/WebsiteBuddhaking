@@ -140,15 +140,3 @@ AOS.init({
     // chỉ chạy 1 lần khi scroll tới 
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-
-    if (window.location.pathname === "/") {
-        const track = document.querySelector('[style*="animation: reviewScroll"]');
-
-        if (track) {
-            const content = track.innerHTML;
-            track.innerHTML += content;
-        }
-    }
-
-});
