@@ -1,23 +1,12 @@
 <main style="background: #FFFBEF;">
 
-	<div class="position-relative hero-wrapper"
-		style="height: auto; overflow: hidden;">
-
-		<!-- Skeleton -->
-		<div
-			class="hero-skeleton placeholder-wave position-absolute top-0 start-0 w-100 h-100">
-			<div class="placeholder w-100 h-100"></div>
-		</div>
-
-		<!-- Picture -->
+	<div class="hero-wrapper">
 		<picture>
 		<source media="(min-width: 768px)"
 			th:srcset="@{/image/HeroBanner.webp}">
-		<img th:src="@{/image/Mobile_banner(2).webp}" fetchpriority="high"
-			loading="eager" decoding="async" class="w-100 hero-img"
-			onload="this.closest('.hero-wrapper').querySelector('.hero-skeleton').style.display='none'"
-			alt="Hương thảo mộc cao cấp Buddha King"> </picture>
-
+		<img th:src="@{/image/Mobile_banner(2).webp}" class="hero-img"
+			fetchpriority="high" loading="eager" decoding="async" width="750"
+			height="1000" alt="Hương thảo mộc cao cấp Buddha King"> </picture>
 	</div>
 
 
@@ -60,7 +49,8 @@
 							style="height: 25vh;">
 							<img th:src="@{image/NguyenLieu(1).webp}"
 								class="w-100 h-100 img-fluid" style="object-fit: cover;"
-								alt="Nguyên liệu nhang buddhaking - cây Tùng Kim">
+								alt="Nguyên liệu nhang buddhaking - cây Tùng Kim" loading="lazy"
+								decoding="async" fetchpriority="low">
 							<div
 								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
 								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
@@ -74,7 +64,8 @@
 							style="height: 25vh;">
 							<img th:src="@{image/NguyenLieu(2).webp}"
 								class="w-100 h-100 img-fluid" style="object-fit: cover;"
-								alt="Nguyên liệu nhang buddhaking - Trầm Hương">
+								alt="Nguyên liệu nhang buddhaking - Trầm Hương" loading="lazy"
+								decoding="async" fetchpriority="low">
 							<div
 								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
 								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
@@ -88,7 +79,8 @@
 							style="height: 25vh;">
 							<img th:src="@{image/NguyenLieu(3).webp}"
 								class="w-100 h-100 img-fluid" style="object-fit: cover;"
-								alt="Nguyên liệu nhang buddhaking - Cây Đàn Hương">
+								alt="Nguyên liệu nhang buddhaking - Cây Đàn Hương"
+								loading="lazy" decoding="async" fetchpriority="low">
 							<div
 								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
 								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
@@ -102,7 +94,8 @@
 							style="height: 25vh;">
 							<img th:src="@{image/NguyenLieu(4).webp}"
 								class="w-100 h-100 img-fluid" style="object-fit: cover;"
-								alt="Nguyên liệu nhang buddhaking - Đinh Hương">
+								alt="Nguyên liệu nhang buddhaking - Đinh Hương" loading="lazy"
+								decoding="async" fetchpriority="low">
 							<div
 								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
 								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
@@ -116,7 +109,8 @@
 							style="height: 25vh;">
 							<img th:src="@{image/NguyenLieu(5).webp}"
 								class="w-100 h-100 img-fluid" style="object-fit: cover;"
-								alt="Nguyên liệu nhang buddhaking - Cây Hương Đá">
+								alt="Nguyên liệu nhang buddhaking - Cây Hương Đá" loading="lazy"
+								decoding="async" fetchpriority="low">
 							<div
 								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
 								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
@@ -130,7 +124,8 @@
 							style="height: 25vh;">
 							<img th:src="@{image/NguyenLieu(6).webp}"
 								class="w-100 h-100 img-fluid" style="object-fit: cover;"
-								alt="Nguyên liệu nhang buddhaking - Thuốc Bắc">
+								alt="Nguyên liệu nhang buddhaking - Thuốc Bắc" loading="lazy"
+								decoding="async" fetchpriority="low">
 							<div
 								class="position-absolute bottom-0 start-0 w-100 text-center text-white fw-semibold"
 								style="background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent); padding: 6px 8px;">
@@ -198,6 +193,7 @@
 				<!-- Image -->
 				<div class="col-md-6 order-1 order-md-2 text-center">
 					<img alt="Công nghệ sinh học độc quyền nhang Buddha King"
+						loading="lazy" decoding="async" fetchpriority="low"
 						class="img-fluid rounded-4 shadow-sm" th:src="@{/image/CNSH.webp}">
 				</div>
 
@@ -357,8 +353,8 @@
 							<svg width="36" height="36" viewBox="0 0 48 48"
 								xmlns="http://www.w3.org/2000/svg">
 								<circle cx="24" cy="24" r="24" fill="#f8f4ea" />
-								<path d="M17 18c2-4 5-6 7-6s5 2 7 6" stroke="#e7b559" stroke-width="3"
-																	fill="none" />
+								<path d="M17 18c2-4 5-6 7-6s5 2 7 6" stroke="#e7b559"
+									stroke-width="3" fill="none" />
 								<circle cx="24" cy="22" r="6" fill="#e7b559" />
 								<path d="M12 38c2-6 8-9 12-9s10 3 12 9" fill="#cbbfa6" />
 							</svg>

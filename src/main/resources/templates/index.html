@@ -10,6 +10,8 @@
 <meta name="theme-color" content="#B8962E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title th:text="${title} ?: 'Buddha King - Hương thảo mộc thiên nhiên'"></title>
+<link th:if="${content=='home'}" rel="preload" as="image" th:href="@{/image/Mobile_banner(2).webp}" media="(max-width: 768px)">
+<link th:if="${content=='home'}" rel="preload" as="image" th:href="@{/image/HeroBanner.webp}" media="(min-width: 768px)">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
 	rel="stylesheet"

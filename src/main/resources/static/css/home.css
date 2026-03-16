@@ -1,29 +1,18 @@
 @charset "UTF-8";
 
 main {
-	background: #FFFBEF;
+    background: #FFFBEF;
+}
+
+.hero-wrapper {
+    overflow: hidden;
+    background: #FFFBEF;
 }
 
 .hero-img {
-	object-fit: cover;
-}
-
-@media ( min-width : 768px) {
-	.hero-img {
-		height: auto;
-		object-fit: contain; /* hoặc bỏ luôn */
-		object-position: center;
-	}
-	@media ( max-width : 768px) {
-		.hero-img {
-			height: 58vh;
-			object-fit: contain; /* hoặc bỏ luôn */
-			object-position: center;
-		}
-	}
-	.hero-skeleton {
-		z-index: 2;
-	}
+    width: 100%;
+    height: auto;
+    display: block;
 }
 
 /*Đánh giá khách*/
