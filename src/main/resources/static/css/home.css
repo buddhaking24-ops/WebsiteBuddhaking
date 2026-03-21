@@ -4,15 +4,18 @@ main {
     background: #FFFBEF;
 }
 
-.hero-wrapper {
-    overflow: hidden;
-    background: #FFFBEF;
-}
-
 .hero-img {
     width: 100%;
     height: auto;
     display: block;
+}
+
+/* Tablet + PC */
+@media (min-width: 768px) {
+    .hero-img {
+        width: 100%;
+        margin: 0 auto;
+    }
 }
 
 /*Đánh giá khách*/
