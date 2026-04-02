@@ -3,13 +3,14 @@
 
 <head>
 <meta charset="UTF-8">
-<meta name="description"
-	content="Hương nhang thảo mộc Buddha King – nhang sạch tinh khiết từ nguyên liệu tự nhiên, an toàn cho sức khỏe và môi trường.">
-<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="description" th:content="${description} ?: 'Hương nhang thảo mộc Buddha King – nhang sạch tinh khiết từ nguyên liệu tự nhiên, an toàn cho sức khỏe và môi trường.'">
+<meta name="robots"
+      th:content="${robots} ?: 'index,follow,max-image-preview:large'">
 <meta name="author" content="Buddha King">
 <meta name="theme-color" content="#B8962E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title th:text="${title} ?: 'Buddha King - Hương thảo mộc thiên nhiên'"></title>
+<link rel="canonical" th:href="${canonical} ?: 'https://buddhaking.vn/'">
 <link th:if="${content=='home'}" rel="preload" as="image" th:href="@{/image/Mobile_banner(2).webp}" media="(max-width: 768px)">
 <link th:if="${content=='home'}" rel="preload" as="image" th:href="@{/image/HeroBanner.webp}" media="(min-width: 768px)">
 <link
